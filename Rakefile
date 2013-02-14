@@ -15,4 +15,15 @@ desc "pulls and publishes new ohpe matsku"
 task :publish do
   pull
   sh "middleman build"
+  sh "chmod -R g+rws . 2>/dev/null"
+  sh "chmod -R a+rX . 2>/dev/null"
+end
+
+
+desc "pulls and publishes new ohpe matsku"
+task :laitos do
+  pull
+  sh "middleman build"
+  sh "chmod -R g+rws . 2>/dev/null"
+  sh "chmod -R a+rX . 2>/dev/null"
 end
