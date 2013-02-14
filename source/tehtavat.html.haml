@@ -1,0 +1,40 @@
+:javascript
+  $(document).ready(function() {
+    $(function() {
+        var hash = window.location.hash;
+        // do some validation on the hash here
+        hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+    window.scrollTo(0,0);
+
+    $(".tehtava").hide();
+      $("div.toc_viikko").hide();
+      $(".heading").click(function(){$(this).next(".tehtava").slideToggle(200);});});
+  });
+
+:coffeescript
+  $(document).ready ->
+    $(->
+      hash = window.location.hash
+      hash and $("ul.nav a##{hash}tab]").tab "show"
+    )
+
+%div.navbar.navbar-fixed-top
+  %div.navbar-inner
+    %ul.nav
+      %li <a id="viikko1tab" href="#viikko1" data-toggle="tab" onclick="window.scrollTo(0,0)">Viikko1</a>
+      %li <a id="viikko2tab" href="#viikko2" data-toggle="tab" onclick="window.scrollTo(0,0)">Viikko2</a>
+      %li <a id="viikko3tab" href="#viikko3" data-toggle="tab" onclick="window.scrollTo(0,0)">Viikko3</a>
+      %li <a id="viikko4tab" href="#viikko4" data-toggle="tab" onclick="window.scrollTo(0,0)">Viikko4</a>
+      %li.active <a href="#viikko5" data-toggle="tab" onclick="window.scrollTo(0,0)">Viikko5</a>
+%div.container{id: 'top'}
+  %div.tab-content
+    %div.viikkoraja-mooc.tab-pane{id: "viikko1"}
+      = partial 'viikko1'
+    %div.viikkoraja-mooc.tab-pane{id:"viikko2"}
+      = partial 'viikko2'
+    %div.viikkoraja-mooc.tab-pane{id:"viikko3"}
+      = partial 'viikko3'
+    %div.viikkoraja-mooc.tab-pane{id:"viikko4"}
+      = partial 'viikko4'
+    %div.viikkoraja-mooc.tab-pane.active{id:"viikko5"}
+      = partial 'viikko4'
