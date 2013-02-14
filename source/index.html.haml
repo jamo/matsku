@@ -11,13 +11,6 @@
       $(".heading").click(function(){$(this).next(".tehtava").slideToggle(200);});});
   });
 
-:coffeescript
-  $(document).ready ->
-    $(->
-      hash = window.location.hash
-      hash and $("ul.nav a##{hash}tab]").tab "show"
-    )
-
 %div.navbar.navbar-fixed-top
   %div.navbar-inner
     %ul.nav
