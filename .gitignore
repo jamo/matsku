@@ -9,6 +9,7 @@
 
 # Ignore the build directory
 /build
+_*.html.erb
 
 # Ignore Sass' cache
 /.sass-cache
