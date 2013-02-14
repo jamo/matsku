@@ -5,7 +5,7 @@
         // do some validation on the hash here
         hash && $('ul.nav a[href="' + hash + '"]').tab('show');
     window.scrollTo(0,0);
-
+    $(".viikkoraja").hide();
     $(".tehtava").hide();
       $("div.toc_viikko").hide();
       $(".heading").click(function(){$(this).next(".tehtava").slideToggle(200);});});
